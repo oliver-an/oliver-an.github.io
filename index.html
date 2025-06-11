@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Oliver Andrews</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style>
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+      font-size: 16px;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    header h1 {
+      font-size: 28px;
+      font-weight: 600;
+      margin: 0;
+    }
+    header a {
+      text-decoration: none;
+      color: #000 !important;
+      transition: text-decoration 0.2s ease;
+    }
+    header a:hover {
+      color: #000 !important;
+      text-decoration: underline;
+    }
+    header a:visited, header a:active {
+      color: #000 !important;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+    }
+    nav a {
+      color: #000;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s ease, text-decoration 0.2s ease;
+    }
+    nav a:hover {
+      color: #333;
+      text-decoration: underline;
+    }
+    nav a.active {
+      color: #003d7a;
+    }
+    
+    /* All other hyperlinks styling */
+    a {
+      color: #4a90e2;
+      text-decoration: none;
+    }
+    a:hover, a:visited, a:active {
+      color: #4a90e2;
+    }
+    .content-section { display: none; }
+    .content-section.active { display: block; }
+
+    /* Banner image styling */
+    .banner-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border: 1px solid #ddd;
+      margin-bottom: 30px;
+    }
+
+    img.profile { /* For the main profile image on home page */
+      width: 200px;
+      height: 250px;
+      object-fit: cover;
+      border: 1px solid #ddd;
+    }
+
+    img.stanley { /* For the stanley image */
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border: 1px solid #ddd;
+      margin: 20px 0;
+    }
+
+    .group-member-image { /* For images in the group section */
+      width: 100px;
+      height: 130px;
+      object-fit: cover;
+      border: 1px solid #ddd;
+    }
+
+    /* Current Group Styling */
+    .current-group-member-item {
+      display: flex;
+      gap: 20px; /* Space between image and text block */
+      margin-bottom: 25px;
+      align-items: flex-start; /* Align items to the top */
+    }
+    .current-group-member-item > div { /* Text content container */
+      flex: 1; /* Allows text block to take remaining space */
+    }
+
+    /* Publications styling */
+    .year-section {
+      margin-bottom: 30px;
+    }
+    .year-section h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #333;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+    }
+    .publication-item {
+      margin-bottom: 15px;
+      padding-left: 20px;
+    }
+
+    /* Section intro text styling */
+    .section-intro {
+      margin-bottom: 30px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Project image placeholder styling */
+    .project-image-placeholder {
+      width: 100%;
+      max-width: 300px; /* Adjust as needed */
+      height: 180px;    /* Adjust as needed */
+      object-fit: cover;
+      border: 1px solid #eee;
+      background-color: #f0f0f0;
+      display: block;
+      margin: 20px auto 20px 0; /* Margin for spacing, auto for potential centering if needed */
+      text-align: center;
+      line-height: 180px; /* Vertically center text if no image src */
+      color: #aaa;
+      font-style: italic;
+    }
+    
+    .project-item {
+        margin-bottom: 40px; /* Add space between project items */
+    }
+
+
+  
+    .former-group-member-item {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 25px;
+      align-items: flex-start;
+    }
+    .former-group-member-item .group-member-image {
+      width: 100px;
+      height: 130px;
+      object-fit: cover;
+      border: 1px solid #ddd;
+    }
+    .former-group-member-item > div {
+      flex: 1;
+    }
+    .former-group-member-item h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0 0 5px 0;
+    }
+    .former-group-member-item p {
+      font-size: 16px;
+      margin: 0 0 8px 0;
+      color: #333;
+    }
+</style>
+</head>
+<body>
+<header>
+<h1><a class="nav-link active" href="#home">Oliver Andrews</a></h1>
+<nav>
+<ul>
+<li><a class="nav-link" href="#group">Group</a></li>
+<li><a class="nav-link" href="#publications">Publications</a></li>
+</ul>
+</nav>
+</header>
+<section class="content-section active" id="home">
+<div style="display: flex; gap: 40px; align-items: flex-start; margin-bottom: 30px; flex-wrap: wrap;">
+<div style="flex: 1 1 60%;">
+<p>I am a climate and ocean scientist in the <a href="https://www.york.ac.uk/environment/">Department of Environment and Geography</a> at the <a href="https://www.york.ac.uk">University of York</a>. I lead York's <a href="https://www.york.ac.uk/yesi/networks/marine-coastal-enviros-ecosystems-people-network/">Marine &amp; Coastal Environments, Ecosystems &amp; People Research</a> network and am an affiliate member of the <a href="https://tyndall.ac.uk/people/oliver-andrews/">Tyndall Centre for Climate Change Research</a>.</p>
+<p>Current research topics in my group include:</p>
+<ul style="padding-left: 20px;">
+<li>Marine extreme events</li>
+<li>Ocean deoxygenation and the OMZs</li>
+<li>Climate impacts on the Northwest European shelf</li>
+<li>Ocean carbon cycle processes</li>
+<li>Climate impacts on human health</li>
+</ul>
+<p>You can find my publications on <a href="https://scholar.google.co.uk/citations?user=Q9ZWz9UAAAAJ&amp;hl=en" rel="noopener noreferrer" target="_blank">Google Scholar</a>.</p>
+<h2 style="font-size: 20px; margin-top: 40px; margin-bottom: 20px;">Background</h2>
+<p>I joined York as a Senior Lecturer in 2023 after five years as a Lecturer in the <a href="https://www.bristol.ac.uk/geography/">School of Geographical Sciences</a> at the University of Bristol. I did my PhD in the <a href="https://www.uea.ac.uk/about/school-of-environmental-sciences/">School of Environmental Sciences</a> at the University of East Anglia (UEA) and postdoctoral research in the <a href="https://tyndall.ac.uk">Tyndall Centre for Climate Change Research</a> at UEA.
+        I have held visiting scientist positions at <a href="https://eaps.mit.edu">Massachusetts Institute of Technology</a> and the <a href="https://www.utas.edu.au/imas">Institute for Marine and Antarctic Studies</a> at the University of Tasmania. </p>
+<a href="https://www.slowlydownward.com" rel="noopener noreferrer" target="_blank"><img alt="Stanley" class="stanley" src="stanley.jpg"/></a>
+</div>
+<div>
+<img alt="Oliver Andrews" class="profile" src="andrews.jpg"/>
+</div>
+</div>
+<div style="margin-top: 30px; font-size: 15px;">
+<p><strong>Contact details:</strong></p>
+<p>Dr Oliver Andrews<br/>Department of Environment and Geography<br/>University of York<br/>York YO10 5NG<br/>UK</p>
+<p>Email: <a href="mailto:oliver.andrews@york.ac.uk">oliver.andrews@york.ac.uk</a></p>
+</div>
+</section>
+<section class="content-section" id="group">
+<img alt="Ocean Research Banner" class="banner-image" src="OMZ.jpg"/>
+<h2 style="font-size: 20px; font-weight: 600; margin-bottom: 20px;">Current Group</h2>
+<div class="section-intro">
+<p>We are always looking for motivated <a href="https://www.york.ac.uk/environment-geography/study/postgraduate-research/phd-mphil/">research students</a>, postdocs or fellows to join the team. Feel free to contact me directly. Current group members are working on:</p>
+</div>
+<div class="current-group-member-item">
+<img alt="Catherine Berridge" class="group-member-image" src="catherine.jpg"/>
+<div>
+<h3 style="font-size: 16px; font-weight: 600; margin: 0 0 5px 0;">Catherine Berridge</h3>
+<p style="margin: 0 0 8px 0;">Catherine is a PhD student at <a href="https://www.york.ac.uk/environment-geography/">York</a> working on the consequences of marine heatwaves for terrestrial and marine systems in Northwestern Europe. CASE support from the Met Office (<a href="https://www.metoffice.gov.uk/research/people/dr-segolene-berthou">Ségolène Berthou</a>, <a href="https://www.metoffice.gov.uk/research/people/alex-arnold">Alex Arnold</a>), co-supervised by Cefas (<a href="https://www.cefas.co.uk/icoe/international-marine-climate-change-centre/our-people/dr-bryony-townhill/">Bryony Townhill</a>) and Liverpool (<a href="https://www.liverpool.ac.uk/people/alessandro-tagliabue">Alessandro Tagliabue</a>).</p>
+</div>
+</div>
+<div class="current-group-member-item">
+<img alt="Mariana Maia Pacheco" class="group-member-image" src="mariana.jpg"/>
+<div>
+<h3 style="font-size: 16px; font-weight: 600; margin: 0 0 5px 0;">Mariana Maia Pacheco</h3>
+<p style="margin: 0 0 8px 0;">Mariana is a PhD student at <a href="https://research-information.bris.ac.uk/en/persons/mariana-maia-pacheco">Bristol</a> working on marine heatwaves and biogeochemical extreme events in models and the role of eddies. Project co-supervised by GEOMAR (<a href="https://www.geomar.de/en/ifrenger">Ivy Frenger</a>), University of Gothenburg (<a href="https://www.gu.se/en/about/find-staff/bastienqueste">Bastien Queste</a>) and Bristol (<a href="https://www.bristol.ac.uk/people/person/Fanny-Monteiro-125e87b4-41ce-4afb-9fb4-48e2677c52c9/">Fanny Monteiro</a>).</p>
+</div>
+</div>
+<h2 style="font-size: 20px; font-weight: 600; margin: 40px 0 20px 0;">Former Group Members</h2>
+<div class="section-intro">
+<p>Former postdocs and research students (PhD and MScR) from the group continue to do great things. Look them up! </p>
+</div>
+<div class="former-group-member-item">
+<img alt="Alan Kennedy-Asser" class="group-member-image" src="alan.jpg"/>
+<div>
+<h3>Alan Kennedy-Asser</h3>
+<p>Alan is a Senior Research Associate in the School of Geographical Sciences at <a href="https://www.bristol.ac.uk/people/person/Alan-Kennedy-Asser-9810ab8a-672a-46d6-83e0-ea4035b89969/">Bristol</a> and led work on UK heatwaves and heat stress as part of on our <a href="https://www.ukclimateresilience.org/projects/impres-impacts-and-risk-assessment-to-better-inform-resilience-planning/">IMPRES</a> and  <a href="https://tyndall.ac.uk/projects/openclim/">OpenCLIM</a> UK Climate Resilience programme projects (2019 - 2023).</p>
+</div>
+</div>
+<div class="former-group-member-item">
+<img alt="Ben Blackledge" class="group-member-image" src="ben.jpg"/>
+<div>
+<h3>Ben Blackledge </h3>
+<p>Ben (PhD, 2020 - 2024) worked on developing a mechanistic understanding of marine oxygen dynamics using CMIP class models and the application of causal inference methods. Now at <a href="https://cbiomes.org/2024/12/16/cbiomes-welcomes-benedict-blackledge/">Liverpool.</a></p>
+</div>
+</div>
+<div class="former-group-member-item">
+<img alt="Jamie Atkins" class="group-member-image" src="jamie.jpg"/>
+<div>
+<h3>Jamie Atkins</h3>
+<p>Jamie (MScR, 2019 - 2021) worked to quantify the <a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2022GL098672">contribution of ocean mesoscale eddies to low oxygen extreme events.</a> in collaboration with GEOMAR (<a href="https://www.geomar.de/en/ifrenger">Ivy Frenger</a>). Now at <a href="https://www.uu.nl/staff/JRCAtkins">Utrecht.</a></p>
+</div>
+</div>
+<div class="former-group-member-item">
+<img alt="Will Major" class="group-member-image" src="will.jpg"/>
+<div>
+<h3>Will Major</h3>
+<p>Will (MScR, 2019 - 2021) worked to characterise <a href="https://research-information.bris.ac.uk/en/projects/marine-heatwaves-and-oxygen-extremes-in-the-mediterranean-sea-und">marine heatwaves and low oxygen extremes in the Mediterranean Sea</a> in collaboration with PML (<a href="https://pml.ac.uk/profile/dr-susan-kay/">Susan Kay</a>). Now at the <a href="https://noc.ac.uk/n/Will%20Major"> National Oceanography Centre.</a></p>
+</div>
+</div>
+<div class="former-group-member-item">
+<img alt="Meg Rounsley" class="group-member-image" src="meg.jpg"/>
+<div>
+<h3>Meg Rounsley</h3>
+<p>Meg (MScR, 2020 - 2022) worked on <a href="https://research-information.bris.ac.uk/en/studentTheses/marine-heatwaves-and-surface-chlorophyll-a-extremes-in-the-global">marine heatwaves and surface chlorophyll-a extremes in the global ocean</a>. Now at RPS.</p>
+</div>
+</div>
+</section>
+<section class="content-section" id="publications">
+<img alt="Ocean Research Banner" class="banner-image" src="OMZ.jpg"/>
+<h2 style="font-size: 20px; margin-bottom: 30px;">Publications</h2>
+<div class="year-section">
+<h3>In Review</h3>
+<div class="publication-item">Manuscripts currently under peer review will be listed here as they become available.</div>
+</div>
+<div class="year-section">
+<h3>Published</h3>
+<div class="publication-item">Kennedy-Asser, A.T., Andrews, O., Montgomery, J., Jenkins, K.L., Smith, B.A., Lewis, E., Birkinshaw, S.J., He, H., Pywell, R.F., Brown, M.J. and Redhead, J.W.: The role of local knowledge in enhancing climate change risk assessments in rural Northern Ireland. <em>Clim. Risk Manag.</em>, p.100702, <a href="https://doi.org/10.1016/j.crm.2025.100702" target="_blank">2025</a>.</div>
+<div class="publication-item">Mitchell, D., Lo, Y.E., Ball, E., Godwin, J.L., Andrews, O., Barciela, R., Ford, L.B., Di Napoli, C., Ebi, K.L., Fučkar, N.S. and Gasparrini, A.: Expert judgement reveals current and emerging UK climate-mortality burden. <em>Lancet Planet. Health</em>, 8(9), pp. e684-e694, <a href="https://doi.org/10.1016/S2542-5196(24)00175-X" target="_blank">2024</a>.</div>
+<div class="publication-item">Mackay, N., Sohail, T., Zika, J. D., Williams, R. G., Andrews, O., and Watson, A. J.: An optimal transformation method applied to diagnose the ocean carbon budget. <em>Geosci. Model Dev.</em>, 17(15), 5987-6005, <a href="https://doi.org/10.5194/gmd-17-5987-2024" target="_blank">2024</a>.</div>
+<div class="publication-item">Warren, R., Price, J., Forstenhäusler, N., Andrews, O., Brown, S., Ebi, K., Gernaat, D., Goodwin, P., Guan, D., He, Y. and Manful, D.: Risks associated with global warming of 1.5 to 4° C above pre-industrial levels in human and natural systems in six countries. <em>Clim. Change</em>, 177, <a href="https://link.springer.com/article/10.1007/s10584-023-03646-6" target="_blank">2024</a>.</div>
+<div class="publication-item">Zheng, Q, Bingham, R and Andrews, O.: Using Sea Level to Determine the Strength, Structure and Variability of the Cape Horn Current. <em>Geophys. Res. Lett.</em>, 50, e2023GL105033, <a href="https://doi.org/10.1029/2023GL105033" target="_blank">2023</a>.</div>
+<div class="publication-item">Jenkins, K., Kennedy-Asser, A., Andrews, O., and Lo, E.: Updated projections of UK heat-related mortality using policy-relevant global warming levels and socio-economic scenarios. <em>Environ. Res. Lett.</em>, <a href="https://doi.org/10.1088/1748-9326/ac9cf3" target="_blank">2022</a>.</div>
+<div class="publication-item">Wilson, J., Andrews, O. et al. (12): The Biological Carbon Pump in CMIP6 models: 21st century trends and uncertainties. <em>Proc. Natl. Acad. Sci. U.S.A</em>, 119, e2204369119, <a href="https://doi.org/10.1073/pnas.2204369119" target="_blank">2022</a>.</div>
+<div class="publication-item">Atkins, J., Andrews, O., and Frenger, I.: Quantifying the Contribution of Ocean Mesoscale Eddies to Low Oxygen Extreme Events. <em>Geophys. Res. Lett.</em>, 49, e2022GL098672, <a href="https://doi.org/10.1029/2022GL098672" target="_blank">2022</a>.</div>
+<div class="publication-item">Thompson, V., Kennedy-Asser, A., Vosper, E., Lo, E., Huntingford, C., Andrews, O., Collins, M., Hegerl, G., and Mitchell, D.: The 2021 western North America heatwave amongst the most extreme events ever recorded globally. <em>Sci. Adv.</em>, 8, eabm6860, <a href="https://doi.org/10.1126/sciadv.abm6860" target="_blank">2022</a>.</div>
+<div class="publication-item">Warren, R., Andrews, O., et al. (11): Quantifying risks avoided by limiting global warming to 1.5 or 2°C above pre-industrial levels. <em>Clim. Change</em>, 172, <a href="https://doi.org/10.1007/s10584-021-03277-9" target="_blank">2022</a>.</div>
+<div class="publication-item">Mitchell, D., Stone, E., Andrews, O. et al. (11): The Bristol CMIP6 Data Hackathon. <em>Weather</em>, <a href="https://doi.org/10.1002/wea.4161" target="_blank">2022</a>.</div>
+<div class="publication-item">Kennedy-Asser, A, Owen, G., Griffith, G., Andrews, O., Lo, E., Mitchell, D., Jenkins, K., and Warren, R.: Projected risks associated with heat stress in the UK Climate Projections (UKCP18). <em>Environ. Res. Lett.</em>, 17, 034024, <a href="https://iopscience.iop.org/article/10.1088/1748-9326/ac541a" target="_blank">2022</a>.</div>
+<div class="publication-item">Kennedy-Asser, A., Andrews, O., Mitchell, D., and Warren, R.: Evaluating heat extremes in the UK Climate Projections (UKCP18). <em>Environ. Res. Lett.</em>, 16, 014039, <a href="https://iopscience.iop.org/article/10.1088/1748-9326/abc4ad" target="_blank">2021</a>.</div>
+<div class="publication-item">Hopkins, F., Suntharalingham, P., Gehlen, M., Andrews, O. et al. (20): The impacts of ocean acidification on marine trace gases and implications for atmospheric chemistry and climate. <em>Proc. R. Soc. A.</em>, 476, 2237, <a href="https://royalsocietypublishing.org/doi/10.1098/rspa.2019.0769" target="_blank">2020</a>.</div>
+<div class="publication-item">DeVries, T., Le Quéré, C., Andrews, O., Berthet, S., Hauck, J., Ilyina, T., Landschützer, P, Lenton, A., Lima, I., Nowicki, M., Schwinger, J., and Séférian, R.: Decadal trends in the ocean carbon sink. <em>Proc. Natl. Acad. Sci. U.S.A</em>, 116, <a href="https://www.pnas.org/doi/10.1073/pnas.1900371116" target="_blank">2019</a>.</div>
+<div class="publication-item">Andrews, O., Le Quéré, C., Kjellstrom, T., Lemke, B., and Haines, A.: Implications for workability and survivability in populations exposed to extreme heat under climate change: a modelling study. <em>Lancet Planet. Health</em>, 2, e540-47, <a href="https://www.thelancet.com/journals/lancet/article/PIIS2542-5196(18)30240-7/fulltext" target="_blank">2018</a>.</div>
+<div class="publication-item">Turney, C., Palmer, J., Maslin, M., Hogg, A., Fogwill, C., Southon, J., Fenwick, P., Bronk-Ramsey, C., Thomas, Z., Lipson, M., Beaven, B., Jones, R., Andrews, O., and Hua, Q.: Global peak in atmospheric radiocarbon defines the onset of the Anthropocene Epoch in 1965. <em>Sci. Rep.</em>, 8, <a href="https://www.nature.com/articles/s41598-018-20970-5" target="_blank">2018</a>.</div>
+<div class="publication-item">Le Quéré, C., Andrew, R. M., Friedlingstein, P., Sitch, S., Pongratz, J., Manning, A. C., Korsbakken, J. I., Peters, G. P., Canadell, J. G., Jackson, R. B., Boden, T. A., Tans, P. P., Andrews, O. et al. (64): Global Carbon Budget 2017. <em>Earth Syst. Sci. Data</em>, 10, 405-448, <a href="https://doi.org/10.5194/essd-10-405-2018" target="_blank">2018</a>.</div>
+<div class="publication-item">Andrews, O., Buitenhuis, E., Le Quéré, C. and Suntharalingam, P: Biogeochemical modelling of dissolved oxygen in a changing ocean. <em>Phil. Trans. R. Soc. A</em>, 375, <a href="https://doi.org/10.1098/rsta.2016.0328" target="_blank">2017</a>.</div>
+<div class="publication-item">Le Quéré, C., Andrew, R. M., Canadell, J. G., Sitch, S., Korsbakken, J. I., Peters, G. P., Manning, A. C., Boden, T. A., Tans, P. P., Houghton, R. A., Keeling, R. F., Alin, S., Andrews, O. et al. (54): Global Carbon Budget 2016. <em>Earth Syst. Sci. Data</em>, 8, 605 – 649, <a href="https://doi.org/10.5194/essd-8-605-2016" target="_blank">2016</a>.</div>
+<div class="publication-item">Eyring, V., Righi, M., Lauer, A., Evaldsson, M., Wenzel, S., Jones, C., Anav, A., Andrews, O. et al. (27): ESMValTool (v1.0) – a community diagnostic and performance metrics tool for routine evaluation of Earth system models in CMIP. <em>Geosci. Model Dev.</em>, 9, 1747-1802, <a href="https://doi.org/10.5194/gmd-9-1747-2016" target="_blank">2016</a>.</div>
+<div class="publication-item">Andrews, O. D., Bindoff, N. L., Halloran, P. R., Ilyina, T., and Le Quéré, C.: Detecting an external influence on recent changes in oceanic oxygen using an optimal fingerprinting method. <em>Biogeosciences</em>, 10, 1799-1813, <a href="https://doi.org/10.5194/bg-10-1799-2013" target="_blank">2013</a>.</div>
+<div class="publication-item">Andrews, O. D., Contributing Author in: Ciais, P. et al. (14 LAs, 3 RAs): Carbon and Other Biogeochemical Cycles, in: Climate Change 2013: The Physical Science Basis. Contribution of WG I to IPCC AR5, edited by: Stocker, T., et al., Cambridge University Press, Cambridge, UK and New York, NY, USA, <a href="https://www.ipcc.ch/site/assets/uploads/2018/02/WG1AR5_Chapter06_FINAL.pdf" target="_blank">2013</a>.</div>
+</div>
+</section>
+<script>
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.content-section');
+    const homeHeaderLink = document.querySelector('header h1 a.nav-link');
+
+    function setActiveContent(targetId) {
+      navLinks.forEach(l => l.classList.remove('active'));
+      sections.forEach(s => s.classList.remove('active'));
+
+      const targetLink = document.querySelector(`.nav-link[href="#${targetId}"]`);
+      const targetSection = document.getElementById(targetId);
+
+      if (targetLink) {
+        targetLink.classList.add('active');
+      }
+      if (targetSection) {
+        targetSection.classList.add('active');
+      }
+
+      // Ensure the main header link also gets 'active' class if home is selected
+      if (targetId === 'home' && homeHeaderLink) {
+        homeHeaderLink.classList.add('active');
+      } else if (homeHeaderLink) {
+        // If another section is active, the main header link might not be the primary active nav,
+        // but ensure it doesn't have 'active' unless it's the actual home link in the nav.
+        // This logic assumes the H1 link *is* the primary home navigation trigger.
+        if (targetId !== 'home') homeHeaderLink.classList.remove('active');
+      }
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        setActiveContent(targetId);
+        //window.location.hash = targetId; // Update URL hash
+      });
+    });
+
+    function showSectionFromHash() {
+      const hash = window.location.hash ? window.location.hash.substring(1) : 'home';
+      setActiveContent(hash);
+    }
+
+    window.addEventListener('DOMContentLoaded', showSectionFromHash);
+    window.addEventListener('hashchange', showSectionFromHash);
+  </script>
+</body>
+</html>
